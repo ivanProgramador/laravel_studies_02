@@ -8,23 +8,64 @@ class MainController extends Controller
 {
     public function showView()
     {
+        //passando dados para uma view 
 
-         return View('home');
-    }
+        //metodo 1 
 
-    public function showPage()
-    {
-        //acessando uma view dentro de uma subpasta 
-         return View('admin.newPage3');
-    }
+        //nesse caso cada indice desse array vai chegar como um variavel na view do blade 
+        //o valor pode mostrado com php puro ou com as diretivas do blade 
 
-    public function dataPage(){
-
-         $data = [
-            "nome"=>"josé",
-            "telefone"=>"777777-888888"
+         $data =[
+              'nome'=>'José',
+              'phone'=>'3333-3333'
          ];
-         
-         return view('dataPage', $data);
+
+         return View('admin.newPage3',$data);
     }
+
+     public function showView2()
+    {
+        //passando dados para uma view 
+
+        //metodo 2
+
+        //nesse caso nesse caso eu passo o array diretamente  
+
+         return View('admin.newPage3',[
+              'nome'=>'José',
+              'phone'=>'3333-3333'
+         ]);
+    }
+
+
+       public function showView3()
+    {
+        //passando dados para uma view 
+
+        //metodo 3
+
+        //nesse caso eu uso o metodo with 
+
+         return View('admin.newPage3')->with('name','jose')->with('telefone','3333-6666');
+    }
+
+       public function showView4()
+    {
+        //passando dados para uma view 
+
+        //metodo 4
+
+        //nesse caso eu uso o metodo compact que recebe a veriavel analisa se o valor existe e envia 
+         
+        $nome ='jose';
+        $telefone = '33554499';
+        return View('admin.newPage3',compact('nome','telefone'));
+    }
+
+
+
+
+
+
+   
 }

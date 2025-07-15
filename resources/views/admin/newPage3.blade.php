@@ -1,5 +1,10 @@
 
 @extends('layouts/main_layout')
 @section('content')
-  <p class="display-1 text-center">View da subpasta</p>
+  
+  <h2>Dados que vieram do metodo  </h2>
+  <p>Nome:{{ $nome }}</p>
+  <p>Telefone:{{$telefone}}</p>
+
+
 @endsection
