@@ -1,0 +1,10 @@
+fazendo uma view 
+
+   php artisan make:view newPage2
+
+fazendo uma view com uma subpasta pra ela 
+
+   php artisan make:view admin/newPage3
+
+
+

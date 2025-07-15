@@ -1,0 +1,21 @@
+Blade 
+  
+  É uma template engine que roda dentro do laravel, o fluxo de exibição de uma view,
+  começa na rota que aciona o controller e o controller chama a view atraves de um dos 
+  seus métodos.
+
+  1 - Rota 
+  2 - controller 
+  3 - metodo do controller 
+  4 - view 
+
+  uma view precisa ter essas duas extenções ".blade.php" ou ela não vai funcionar 
+
+  
+
+
+
+
+
+
+
