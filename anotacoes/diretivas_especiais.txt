@@ -1,0 +1,21 @@
+   {{--
+      Diretivas especias
+      São uteis quando o codigo necessita de testes
+      que os fuxos tradicionais não conseguem fazer 
+
+   --}}
+
+  {{--is empty--}}
+@empty($valor)
+   <p>Isso só aparece se o valor estiver vazio </p>   
+@endempty
+
+{{-- isset --}}
+@isset($valor)
+    <p>Isso só aparece se essa variavel tiver sido definida </p>
+@endisset 
+
+{{--unless--}}
+@unless($valor == 100)
+    <p>Isso não vai aparcer a menos que valor seja igual a 100</p>
+@endunless
