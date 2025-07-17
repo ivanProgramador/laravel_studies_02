@@ -54,3 +54,62 @@
           <h1> Outro </h1>
         @endswitch
 @endsection
+
+---------------------------------------------------------------------------
+
+{{-- Usando o continue e o break --}}
+
+@for($index = 0; $index <10 ; $index ++)
+
+   {{-- 
+        No caso esse continue vai avaçar para o final 
+        quando o $index estiver valendo 5 
+   --}}
+
+   @if($index = 5)
+     @continue
+   @endif
+
+   <p> Index: {{ $index }} </p>
+
+   {{-- Usando o break para parar o cliclo para tetar essa possibnlidade tem que comentar o 
+        bloco if acima
+   --}}
+
+   @if($index == 7)
+      @break
+   @endif
+
+@endfor
+
+
+
+{{-- Loop variavel --}}
+{{-- 
+  O foreach possui uma variável implicita chamada indice
+  e eu posso usar ela para parar o loop e executar um codigo qualquer 
+  , por exemplo abaixo eeu uso ela para definiri o prmiro inidice e
+  apresentar um texto quando ele for encontrado.
+  
+  eu tambem fiz isso com o ultimo indice e da mesma forma que posso apenas mostrar 
+  o texto eu oderia gerar um componente html ou executar outro codigo 
+
+--}}
+
+@foreach($cities as $city)
+
+  <h1>{{ $city }}</h1>
+  <h3>{{ $loop->index }}</h3>
+
+  @if($loop->first)
+    <h3>Primeira cidade </h3>
+  @endif
+
+  @if($loop->last)
+     <h3>Ultima cidade </h3>
+  @endif
+
+@endforeach
+
+
+@endsection

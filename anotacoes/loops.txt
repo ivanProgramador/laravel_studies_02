@@ -1,0 +1,45 @@
+{{-- laços de repetição usando o blade --}}
+
+{{-- for --}}
+
+@for($index = 0; $index <5 ; $index ++)
+    <h1>{{ $index }}</h1>
+@endfor
+
+{{-- foreach --}}
+
+@foreach($cities as $city)
+   
+   <h1>{{ $city }}</h1>
+ 
+@endforeach
+
+{{-- 
+     forelse ele tambem faz um lopp porem ele dá a apossibilidade de ap´resntar um codigo default
+     caso a variavel alvo do loppp esteja vazia 
+--}}
+
+
+@forelse($names as $name)
+
+  <h2>{{ $name }}</h2>
+
+@empty 
+
+  <h2>O arrays esta vazio</h2>
+
+@endforelse
+
+
+{{-- While--}}
+
+@while($indice < 10 )
+   
+  <p> {{ $indice }} </p>
+  
+   {{-- usando cido php puro pra incrementar o indice--}}
+  @php
+     $indice ++;    
+  @endphp
+
+@endwhile
