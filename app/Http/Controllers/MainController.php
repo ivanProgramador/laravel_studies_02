@@ -8,8 +8,14 @@ class MainController extends Controller
 {
     public function showView()
     {
-        
-         return View('home',['valor'=>100]);
+         $data=[
+            'value'=>100,
+            'cities'=>['New york','Los angeles','Chicago'],
+            'names'=>['a','b','c'],
+            'indice'=>1
+         ];
+
+         return View('home',$data);
     }
 
    
