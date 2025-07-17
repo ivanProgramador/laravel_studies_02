@@ -18,5 +18,9 @@ class MainController extends Controller
          return View('home',$data);
     }
 
+    public function submit(){
+         echo' Formulario submetido ';
+    }
+
    
 }

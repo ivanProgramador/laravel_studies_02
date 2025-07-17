@@ -4,4 +4,5 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [MainController::class,'showView']);
+Route::post('/submit', [MainController::class,'submit'])->name('submit');
 
