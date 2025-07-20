@@ -1,0 +1,41 @@
+O laravel possui algumas funcionalidades que podem difrenciar a sua execução
+
+- Em desenvolvimento(O codigo ainda esta sendo escrito e testado)
+
+- Em produção(produto final já esta rodando no cliente ) 
+
+Pra avisar ao laravel que o sistema esta em pordução 
+1 - tem que ir no .env 
+2 - na opção APP_ENV 
+3 - preencher com o nome production "APP_ENV=production" 
+
+Exemplo de codigo de teste 
+O blade tem essas diretivas para controlar oque pode ser mostrado na tela 
+do cliente quando o sistema esta em produção, issso serve para codigos de teste 
+de conexão ou testar se as variáveis realmente estão trazendo os dados pra tela
+entre outros usos 
+
+---------------------------------------------------
+
+@production
+  <p>Estou em ambiente de produção </p>
+@else 
+  <p>Não estou em produção </p>    
+@endproduction
+----------------------------------------
+
+
+{{-- Aqui estou testando se o ambiente que eu estou rodando a aplicação 
+     é local se for ele executa o codigo que esta aqui dentro, essa diretiva 
+     olha para APP_ENV=local e verifica o valor dela.  
+--}}
+
+@env('local')
+   <p>Estou no ambiente local </p>    
+@endenv
+
+-------------------------------------------
+
+
+
+
