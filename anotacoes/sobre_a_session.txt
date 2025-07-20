@@ -1,0 +1,50 @@
+A variavel session é global então eu não preciso enviar ela pela rota 
+no caso eu criei 2 rotas para testar isso 
+
+apaga o nome da sessão 
+
+Route::get('/clearSession',[MainController::class, 'clearSession']);
+
+
+inclui o nome na sessão  
+
+Route::get('/setSession',[MainController::class, 'setSession']);
+
+No meu controller eu criei esses metodos coim base na estrtura da pra ver que eu não
+mandei nada atraves deles 
+
+-------------------------------------------------------------
+
+public function setSession(){
+       
+        session(['name'=>'']);
+
+        return view('home');
+       
+    }
+--------------------------------------------------------
+
+ public function setSession(){
+       
+        session(['name'=>'jose']);
+
+        return view('home');
+       
+    }
+--------------------------------------------------    
+
+mas se eu executar essa view depois de chamar o setSession 
+O nome será impresso na tela 
+ 
+--------------------------------------------------------------------
+
+@extends('layouts/main_layout')
+@section('content')
+
+@session('name')
+
+   <h2>O nome da sessão e: {{ session('name') }}</h2>    
+@endsession
+
+@endsection
+---------------------------------------------------------------

@@ -22,5 +22,13 @@ class MainController extends Controller
          echo' Formulario submetido ';
     }
 
+    public function setSession(){
+       
+        session(['name'=>'jose']);
+
+        return view('home');
+       
+    }
+
    
 }
